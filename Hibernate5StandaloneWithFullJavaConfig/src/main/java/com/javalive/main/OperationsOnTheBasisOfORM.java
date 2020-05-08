@@ -8,8 +8,10 @@ import com.javalive.databaseutil.HibernateUtil;
 
 public class OperationsOnTheBasisOfORM {
     public static void main(String[] args) {
-    	com.javalive.entity.Student student1 = new com.javalive.entity.Student(78,"Name73", "Address73");
-    	com.javalive.entity.Student student2 = new com.javalive.entity.Student(79,"Name74", "Address74");
+    	//com.javalive.entity.Student student1 = new com.javalive.entity.Student(78,"Name73", "Address73");
+    	//com.javalive.entity.Student student2 = new com.javalive.entity.Student(79,"Name74", "Address74");
+    	com.javalive.entity.Student student1 = new com.javalive.entity.Student("Name73", "Address73");
+    	com.javalive.entity.Student student2 = new com.javalive.entity.Student("Name74", "Address74");
         Transaction transaction = null;
         System.out.println("Table contents before starting any operation:");
         new OperationsOnTheBasisOfORM().getStudentList();
