@@ -14,6 +14,8 @@ import org.hibernate.service.ServiceRegistry;
 import com.javalive.entity.Student;
 
 public class HibernateUtil {
+	/*ServiceRegistry holds the services that Hibernate will need during bootstrapping and at runtime.
+	StandardServiceRegistryBuilder — this is a Builder for standard ServiceRegistry instances.*/
 	private static StandardServiceRegistry registry;
 	private static SessionFactory sessionFactory;
 
@@ -28,10 +30,12 @@ public class HibernateUtil {
 				settings.put(Environment.USER, "root");
 				settings.put(Environment.PASS, "root");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
-				settings.put(Environment.SHOW_SQL, "true");
-				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
+				settings.put(Environment.SHOW_SQL, "true");//This property displays query build and executed by Hibernate to console.
+				//http://rbyjava.blogspot.com/2012/05/what-is-currentsessioncontextclass-in.html
+				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");//Read above link for more explanation 
 				// settings.put(Environment.HBM2DDL_AUTO, "create-drop");
 				configuration.setProperties(settings);
+				//Mapping entity classes.
 				configuration.addAnnotatedClass(Student.class);
 				registry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();
