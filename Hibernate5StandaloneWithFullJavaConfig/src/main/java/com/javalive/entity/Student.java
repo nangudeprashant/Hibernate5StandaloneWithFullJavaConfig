@@ -1,12 +1,10 @@
 package com.javalive.entity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "student")
 public class Student {
@@ -21,13 +19,10 @@ public class Student {
     public Student() {
     }
     public Student(String name, String address) {
-	//public Student(int id, String name, String address) {
 		super();
-		//this.id = id;
 		this.name = name;
 		this.address = address;
 	}
-
 	public int getId() {
 		return id;
 	}
